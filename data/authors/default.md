@@ -1,16 +1,26 @@
 ---
-name: Tails Azimuth
-avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+name: Adrian Furo
+avatar: /static/images/adrian.jpg
+occupation: DevSecOps Engineer
+email: contact@adrianfuro.com
+linkedin: https://www.linkedin.com/in/adrian-furo-%F0%9F%8C%8E-382473169/
+github: https://github.com/adrianfuro
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+Greetings, fellow internet explorer! You've just stumbled upon my website, so allow me to introduce myself with pleasure.
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+My name is Adrian, a passionate and dedicated Romanian computer science student who also works as a DevSecOps Engineer.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Now, let's dive into the essentials! I possess extensive experience in a diverse array of technologies and fields, which include:
+
+- Proficiency in Python and Bash scripting
+- Expertise in automating cloud deployment using Ansible and Terraform
+- Skilled in Linux administration
+- Experience in penetration testing
+- Knowledge of vulnerability scanning
+- Familiarity with containerization through Docker and Kubernetes
+- Competence in Azure, GCP, and OCI platforms
+
+For a more comprehensive overview of my background and skills, feel free to peruse my [resume](/static/files/resume.pdf).
+
+Aside from my professional pursuits, I have developed a deep-seated passion for astrophysics, cosmology, and science in general. My curiosity continually pushes me to explore the wonders of the cosmos and unravel the mysteries of our universe.
