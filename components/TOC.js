@@ -55,7 +55,7 @@ const Table_of_Contents = ({ ids }) => {
           <li className="py-4">
             <a
               href={`#${id}`}
-              onClick={handleClick(id)}
+              // onClick={handleClick(id)}
               className={
                 currentSection === id
                   ? 'toc-a text-primary-600 hover:font-bold dark:text-primary-400 py-4'
