@@ -13,7 +13,7 @@ const LeftNav = ({ ids }) => {
       const winHeightPx =
         document.documentElement.scrollHeight - document.documentElement.clientHeight
       const scrolled = scrollPx / winHeightPx
-      if (scrolled > 0.07) {
+      if (scrolled > 0.01) {
         setIsSticky(true)
       } else {
         setIsSticky(false)
