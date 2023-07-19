@@ -48,6 +48,7 @@ header.isSticky .title {
 
 .leftNav {
   opacity: 0;
+  transition: 0.5s;
 }
 
 .leftNav.isSticky {
