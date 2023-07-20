@@ -22,11 +22,13 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        // @ts-ignore
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: colors.sky,
-        gray: colors.slate,
+        //@ts-ignore
+        gray: colors.slate, // TODO: Remove ts-ignore after tw types gets updated to v3
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -35,7 +37,7 @@ module.exports = {
             a: {
               color: theme('colors.primary.500'),
               '&:hover': {
-                color: `${theme('colors.primary.600')} !important`,
+                color: theme('colors.primary.600'),
               },
               code: { color: theme('colors.primary.400') },
             },
@@ -55,6 +57,9 @@ module.exports = {
             },
             'h4,h5,h6': {
               color: theme('colors.gray.900'),
+            },
+            p: {
+              fontSize: '18px',
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),
@@ -103,7 +108,7 @@ module.exports = {
             a: {
               color: theme('colors.primary.500'),
               '&:hover': {
-                color: `${theme('colors.primary.400')} !important`,
+                color: theme('colors.primary.400'),
               },
               code: { color: theme('colors.primary.400') },
             },
