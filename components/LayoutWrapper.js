@@ -39,7 +39,7 @@ const LayoutWrapper = ({ children }) => {
             <Link href="/" aria-label="adrians blog">
               <div className="flex items-center justify-between">
                 <div className="mr-3">
-                  <Logo />
+                  <Logo className="hover:animate-spin" />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="title mono-type hidden text-2xl font-semibold hover:text-primary-600 dark:hover:text-primary-400 sm:block">
