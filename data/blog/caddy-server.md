@@ -208,16 +208,16 @@ Setting up a Reverse Proxy is not that hard with Caddy. There are 2 ways you can
 
 2.  Using Caddyfile: - When using Caddyfile to configure your reverse proxy, you'll need to create the file itself first `touch Caddyfile`
     After creating the Caddyfile add these lines and change them accordingly as would you configuration will look like.
-    ```
-    yourdomain.com {
-    reverse_proxy localhost:port
-    }
 
-        subdomain.yourdomain.com {
-                reverse_proxy localhost:port
-        }
-        ```
+```
+yourdomain.com {
+        reverse_proxy localhost:port
+}
 
+subdomain.yourdomain.com {
+        reverse_proxy localhost:port
+}
+```
 
         ```bash
         sudo caddy adapt
