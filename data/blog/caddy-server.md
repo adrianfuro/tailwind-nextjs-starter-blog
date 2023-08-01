@@ -201,7 +201,10 @@ Let’s illustrate by naming the computers involved:
 Setting up a Reverse Proxy is not that hard with Caddy. There are 2 ways you can create a Reverse Proxy with this amazing tool:
 
 1.  Using command line:
-    `bash sudo caddy reverse-proxy --from yourdomain.com --to localhost:port `
+
+    ```
+    bash sudo caddy reverse-proxy --from yourdomain.com --to localhost:port
+    ```
 
 2.  Using Caddyfile: - When using Caddyfile to configure your reverse proxy, you'll need to create the file itself first `touch Caddyfile`
     After creating the Caddyfile add these lines and change them accordingly as would you configuration will look like.
@@ -210,18 +213,18 @@ Setting up a Reverse Proxy is not that hard with Caddy. There are 2 ways you can
     reverse_proxy localhost:port
     }
 
-            subdomain.yourdomain.com {
-                    reverse_proxy localhost:port
-            }
-            ```
+        subdomain.yourdomain.com {
+                reverse_proxy localhost:port
+        }
+        ```
 
 
-            ```bash
-            sudo caddy adapt
-            ```
-            ```bash
-            sudo caddy run
-            ```
+        ```bash
+        sudo caddy adapt
+        ```
+        ```bash
+        sudo caddy run
+        ```
 
 - When using either of the methods and running caddy, it should look a bit like this and you should be able to access your web-app through the domain/subdomain:
 
