@@ -1,0 +1,3 @@
+{
+  "redirects": [{ "source": "/ads.txt", "destination": "/static/files/ads.txt", "permanent": true }]
+}
