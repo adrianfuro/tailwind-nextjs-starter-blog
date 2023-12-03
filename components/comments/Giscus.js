@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
-
 import siteMetadata from '@/data/siteMetadata'
 
 const Giscus = () => {
-  const [enableLoadComments, setEnabledLoadComments] = useState(true)
+  const commentsRef = useRef(null)
   const { theme, resolvedTheme } = useTheme()
+
   const commentsTheme =
     siteMetadata.comment.giscusConfig.themeURL === ''
       ? theme === 'dark' || resolvedTheme === 'dark'
@@ -15,9 +15,8 @@ const Giscus = () => {
 
   const COMMENTS_ID = 'comments-container'
 
-  const LoadComments = useCallback(() => {
-    setEnabledLoadComments(false)
-
+  // Function to load comments
+  const loadComments = () => {
     const {
       repo,
       repositoryId,
@@ -47,24 +46,31 @@ const Giscus = () => {
 
     const comments = document.getElementById(COMMENTS_ID)
     if (comments) comments.appendChild(script)
+  }
 
-    return () => {
-      const comments = document.getElementById(COMMENTS_ID)
-      if (comments) comments.innerHTML = ''
-    }
-  }, [commentsTheme])
-
-  // Reload on theme change
   useEffect(() => {
-    const iframe = document.querySelector('iframe.giscus-frame')
-    if (!iframe) return
-    LoadComments()
-  }, [LoadComments])
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // If the comments section is in the viewport, load the comments
+        if (entries[0].isIntersecting) {
+          loadComments()
+          observer.disconnect()
+        }
+      },
+      { threshold: 1 }
+    )
+
+    observer.observe(commentsRef.current)
+
+    // Cleanup
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
 
   return (
-    <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
-      <div className="giscus" id={COMMENTS_ID} />
+    <div className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300">
+      <div className="giscus" id={COMMENTS_ID} ref={commentsRef} />
     </div>
   )
 }

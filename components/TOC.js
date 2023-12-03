@@ -51,8 +51,8 @@ const Table_of_Contents = ({ ids }) => {
               onClick={handleClick(id)} // added onClick handler
               className={
                 activeId === id
-                  ? 'toc-a text-primary-600 hover:font-bold dark:text-primary-400 py-4'
-                  : 'toc-a hover:font-bold py-4'
+                  ? 'toc-a py-4 font-bold text-primary-600 dark:text-primary-400'
+                  : 'toc-a py-4 hover:font-bold'
               }
             >
               {title}
