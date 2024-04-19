@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: "Adrian's Blog",
   author: 'Adrian Furo',
-  headerTitle: 'Adrian',
+  headerTitle: 'ADRIAN FURO',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'system', // system, dark or light
