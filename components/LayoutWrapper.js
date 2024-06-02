@@ -7,6 +7,7 @@ import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { useState, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 
 const LayoutWrapper = ({ children }) => {
   const [stuck, setStuck] = useState(false)
@@ -39,7 +40,20 @@ const LayoutWrapper = ({ children }) => {
             <Link href="/" aria-label="adrians blog">
               <div className="flex items-center justify-between">
                 <div className="mr-3">
-                  <Logo className="hover:animate-spin" />
+                  <motion.button
+                    whileHover={{
+                      scale: 1.2,
+                      transition: { duration: 0.2 },
+                    }}
+                    whileTap={{
+                      scale: 0.5,
+                      rotate: 360,
+                      transition: { duration: 0.2 },
+                    }}
+                    aria-label="Home"
+                  >
+                    <Logo />
+                  </motion.button>
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="title mono-type hidden text-2xl font-semibold hover:text-primary-600 dark:hover:text-primary-400 sm:block">
