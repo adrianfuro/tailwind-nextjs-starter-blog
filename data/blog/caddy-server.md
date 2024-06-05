@@ -1,5 +1,5 @@
 ---
-title: 'SSL Configuration for Your Domain Using Caddy Server Reverse-Proxy: A Step-by-Step Guide'
+title: 'SSL Configuration for Domains Using Caddy Server Reverse-Proxy'
 date: '2023-07-30'
 tags: ['how-to', 'tools', 'cloud-security']
 draft: false

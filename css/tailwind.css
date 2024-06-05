@@ -11,7 +11,7 @@
 }
 
 .footnotes {
-  @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
 }
 
 .csl-entry {
@@ -58,6 +58,11 @@ header.isSticky .title {
 .table-of-contents {
   position: sticky;
   display: none;
+}
+
+.active {
+  font-weight: bold;
+  color: blue; /* Example color */
 }
 
 .leftNav.isSticky .table-of-contents {
