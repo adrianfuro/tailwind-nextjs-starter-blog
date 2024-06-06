@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (max-width: 600px) {
+  .flex-container img {
+    width: 100% !important; /* Overrides other width properties */
+    margin-right: 0 !important; /* Removes the margin between images */
+  }
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
 .task-list-item::before {
   @apply hidden;
 }
@@ -84,4 +94,9 @@ header.isSticky .title {
 
 .giscus-frame {
   width: 100%;
+}
+
+.source-text {
+  text-align: center;
+  margin-top: -15px;
 }

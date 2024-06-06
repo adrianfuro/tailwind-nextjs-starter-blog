@@ -11,6 +11,8 @@ layout: PostLayout
 
 How phenomena from the cosmos, such as solar flares and cosmic rays, can affect our digital infrastructure. From the mysterious malfunctions in satellites to unexpected errors in microchips, this blog post delves into the science behind single-event upsets and their significant, often overlooked impact on modern technology.
 
+![alt text](/static/images/single-event-effects/cosmic-rays.jpg)
+
 ---
 
 ## Introduction
@@ -42,7 +44,11 @@ There are recorded incidents where **SEE's** affected the normal functioning of 
 
 ### 2003 Schaerbeek Elections
 
+In the _2003 elections_ in Brussels's municipality **Schaerbeek** (Belgium), an anomalous recorded number of votes triggered an investigation that concluded an SEU was responsible for giving a candidate named Maria Vindevoghel **_4,096 extra votes_**. The possibility of a **single-event upset** is suggested by the difference in votes being equivalent to a power of two, $2^{12}$
+
 ### Qantas Flight 72
+
+![QF72](/static/images/single-event-effects/airplane.jpg)
 
 **Qantas Flight 72** (**QF72**) was a scheduled flight from _Singapore Changi Airport_ to _Perth Airport_ by an **Airbus A330**. On 7 October 2008, the flight made an emergency landing at Learmonth Airport near the town of Exmouth, Western Australia, following an inflight accident that included a pair of sudden, uncommanded pitch-down manoeuvres that caused severe injuries — including fractures, lacerations and spinal injuries — to several of the passengers and crew. At Learmonth, the plane was met by the Royal Flying Doctor Service of Australia and CareFlight. Fourteen people were airlifted to Perth for hospitalisation, with thirty-nine others also attending hospital. In all, one crew member and eleven passengers suffered serious injuries, while eight crew and ninety-nine passengers suffered minor injuries. The Australian Transport Safety Bureau (ATSB) investigation found a fault with one of the aircraft's three air data inertial reference units (ADIRUs) and a previously unknown software design limitation of the Airbus A330's fly-by-wire flight control primary computer (FCPC).
 
@@ -58,4 +64,23 @@ Nothing interesting happened for a short ammount of time, until two more errors 
 - <ins>**STALL**</ins>: Due to **_Angle of Attack (AoA)_** having extreme negative values, which would lead to loss of velocity and stalling
 - <ins>**OVERSPEED**</ins>: Due to Velocity data outputted by **_ADIRU_**
 
-These to errors that the crew encountered, were a case of impossibility and this is because of what each error actually reflect. The airplane, as what the **ECAM** suggested with these 2 errors, was _stalling_ and _overspeeding_ at the same time.
+These two errors that the crew encountered, were a case of impossibility and this is because of what each error actually reflect. The aircraft, as what the **ECAM** suggested with these 2 errors, was _stalling_ and _overspeeding_ at the same time.
+
+**_Pitch-down Manoeuvres_**
+
+Due to the extreme negative values of the **AoA** outputted by **ADIRU**, the Aircraft's **_Flight Control Primary Computer (FCPC)_** tried to calibrate the **AoA** values by pitching down. This resulted in loss of control of the Aircraft and everyone on-board experiencing **$-0.8G$** force.
+
+The crew managed to gain control of the aircraft after the second pitch-down, this has been achieved after shutting down the **Auto Pilot (AP)** systems. Basically, the _Airbus A330_ was full manually controlled by the pilots.
+
+**_Aftermath_**
+
+<div class="flex-container" style={{ display: `flex`, flexWrap: `wrap`, justifyContent: `space-between`, alignItems: `center` }}>
+    <img src="/static/images/single-event-effects/Qantas_Flight_72_damage.png" alt="Qantas Flight 72 damage" style={{ width: `49%`, marginRight: `2%` }}/>
+    <img src="/static/images/single-event-effects/Qantas_Flight_72_damage2.png" alt="Qantas Flight 72 secondary damage" style={{ width: `49%` }}/>
+</div>
+
+<div class="source-text">
+    <a href="https://en.wikipedia.org/wiki/Qantas_Flight_72" target="_blank">Source</a>
+</div>
+
+It is fortunate that nobody perished on this incident. Due to the events that happened, the Airline company offered compensation to all passangers and announced it would refund the cost of all travel on their itineraries covering the accident flight, offer a voucher equivalent to a return trip to London applicable to their class of travel and pay for medical expenses arising from the accident.
