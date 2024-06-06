@@ -40,6 +40,8 @@ There are multiple types of Single-event effects that can occur, some of the eff
 
 There are recorded incidents where **SEE's** affected the normal functioning of Microchips that lead to weird and unexpected glitches of software. One of the incidents was actually very close to a disaster due to these types of cosmic influences.
 
+### 2003 Schaerbeek Elections
+
 ### Qantas Flight 72
 
 **Qantas Flight 72** (**QF72**) was a scheduled flight from _Singapore Changi Airport_ to _Perth Airport_ by an **Airbus A330**. On 7 October 2008, the flight made an emergency landing at Learmonth Airport near the town of Exmouth, Western Australia, following an inflight accident that included a pair of sudden, uncommanded pitch-down manoeuvres that caused severe injuries — including fractures, lacerations and spinal injuries — to several of the passengers and crew. At Learmonth, the plane was met by the Royal Flying Doctor Service of Australia and CareFlight. Fourteen people were airlifted to Perth for hospitalisation, with thirty-nine others also attending hospital. In all, one crew member and eleven passengers suffered serious injuries, while eight crew and ninety-nine passengers suffered minor injuries. The Australian Transport Safety Bureau (ATSB) investigation found a fault with one of the aircraft's three air data inertial reference units (ADIRUs) and a previously unknown software design limitation of the Airbus A330's fly-by-wire flight control primary computer (FCPC).
@@ -54,6 +56,6 @@ The pilots experienced **MASTER WARN** and **MASTER CAUT** errors triggered in t
 Nothing interesting happened for a short ammount of time, until two more errors appear on the **Electronic Centralized Aircraft Monitor (ECAM)**:
 
 - <ins>**STALL**</ins>: Due to **_Angle of Attack (AoA)_** having extreme negative values, which would lead to loss of velocity and stalling
-- <ins>**OVERSPEED**</ins>: Due to Velocity data outputted by **_ADIRU_** (I'll come back to this later)
+- <ins>**OVERSPEED**</ins>: Due to Velocity data outputted by **_ADIRU_**
 
 These to errors that the crew encountered, were a case of impossibility and this is because of what each error actually reflect. The airplane, as what the **ECAM** suggested with these 2 errors, was _stalling_ and _overspeeding_ at the same time.
