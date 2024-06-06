@@ -106,7 +106,7 @@ function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
-                    <h3 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                    <h3 className="exclude text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                       Tags
                     </h3>
                     <div className="flex flex-wrap">
@@ -120,7 +120,7 @@ function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && (
                       <div>
-                        <h3 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                        <h3 className="exclude text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           Previous Article
                         </h3>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
@@ -130,7 +130,7 @@ function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
                     )}
                     {next && (
                       <div>
-                        <h3 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                        <h3 className="exclude text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           Next Article
                         </h3>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">

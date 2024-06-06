@@ -2,7 +2,7 @@
 title: 'Beyond Earth: The Impact of Cosmic Events on Technology'
 date: '2024-06-2'
 tags: ['engineering', 'science', 'astrophysics']
-draft: true
+draft: false
 summary: How phenomena from the cosmos, such as solar flares and cosmic rays, can affect our digital infrastructure. From the mysterious malfunctions in satellites to unexpected errors in microchips, this blog post delves into the science behind single-event upsets and their significant, often overlooked impact on modern technology.
 layout: PostLayout
 ---
