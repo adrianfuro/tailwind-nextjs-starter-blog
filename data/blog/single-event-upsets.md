@@ -25,7 +25,7 @@ _Single-event effects_ **(SEE)** have been studied extensively since the 1970s. 
 
 ## Types of Single-event effects
 
-There are multiple types of Single-event effects that can occur, some of the effects can be benign and some of them are irreversible and destructive. The table below will describe each type of Single-event
+There are multiple types of **Single-event effects** that can occur, some of the effects can be benign and some of them are _irreversible_ and _destructive_. The table below will describe each type of Single-event
 
 | <div style={{ width:`160px` }}>TYPE OF SINGLE-EVENT</div> | <div style={{ textAlign: `center` }}>DESCRIPTION</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | DESTRUCTIVE |
 | :-------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: |
@@ -38,9 +38,13 @@ There are multiple types of Single-event effects that can occur, some of the eff
 
 ---
 
+## How does it happen?
+
+---
+
 ## Incidents
 
-There are recorded incidents where **SEE's** affected the normal functioning of Microchips that lead to weird and unexpected glitches of software. One of the incidents was actually very close to a disaster due to these types of cosmic influences.
+There are recorded incidents where **SEE's** affected the normal functioning of Microchips that led to weird and unexpected glitches of software. One of the incidents was actually very close to a disaster due to these types of cosmic influences.
 
 ### 2003 Schaerbeek Elections
 
@@ -49,6 +53,10 @@ In the _2003 elections_ in Brussels's municipality **Schaerbeek** (Belgium), an 
 ### Qantas Flight 72
 
 ![QF72](/static/images/single-event-effects/airplane.jpg)
+
+<div class="source-text">
+    <a href="https://en.wikipedia.org/wiki/File:Qantas_Airways,_Airbus_A330-300_VH-QPA_NRT_(34167383486).jpg" target="_blank">Image Source</a>
+</div>
 
 **Qantas Flight 72** (**QF72**) was a scheduled flight from _Singapore Changi Airport_ to _Perth Airport_ by an **Airbus A330**. On 7 October 2008, the flight made an emergency landing at Learmonth Airport near the town of Exmouth, Western Australia, following an inflight accident that included a pair of sudden, uncommanded pitch-down manoeuvres that caused severe injuries — including fractures, lacerations and spinal injuries — to several of the passengers and crew. At Learmonth, the plane was met by the Royal Flying Doctor Service of Australia and CareFlight. Fourteen people were airlifted to Perth for hospitalisation, with thirty-nine others also attending hospital. In all, one crew member and eleven passengers suffered serious injuries, while eight crew and ninety-nine passengers suffered minor injuries. The Australian Transport Safety Bureau (ATSB) investigation found a fault with one of the aircraft's three air data inertial reference units (ADIRUs) and a previously unknown software design limitation of the Airbus A330's fly-by-wire flight control primary computer (FCPC).
 
@@ -80,7 +88,19 @@ The crew managed to gain control of the aircraft after the second pitch-down, th
 </div>
 
 <div class="source-text">
-    <a href="https://en.wikipedia.org/wiki/Qantas_Flight_72" target="_blank">Source</a>
+    <a href="https://en.wikipedia.org/wiki/Qantas_Flight_72" target="_blank">Images Source</a>
 </div>
 
-It is fortunate that nobody perished on this incident. Due to the events that happened, the Airline company offered compensation to all passangers and announced it would refund the cost of all travel on their itineraries covering the accident flight, offer a voucher equivalent to a return trip to London applicable to their class of travel and pay for medical expenses arising from the accident.
+It is fortunate that nobody perished on this incident. Due to the events that unfolded, the Airline company offered compensation to all passangers and announced it would refund the cost of all travel on their itineraries covering the accident flight, offer a voucher equivalent to a return trip to London applicable to their class of travel and pay for medical expenses arising from the accident.
+
+**_What caused the incident?_**
+
+The analysis of the Aircraft's computers showed that there was a case of **_Flight Control Primary Computer (FCPC)_** **faulty design**. But it does not explain what triggered the actual extrene value change in **AoA**. Given this, the incident was most probably triggered by an **SEE**, specifically a **Single-event upset**.
+
+Given the nature of the incident, a _cosmic ray_ that broke down into <b style={{ color: `red` }}>neutrons</b>, <b style={{ color: `red` }}>muons</b>, <b style={{ color: `red` }}>pions</b> and <b style={{ color: `red` }}>protons</b>, triggered a **bit shift** in one of the **ADIRU** systems, which led to the value of the _AoA_ being drastically changed.
+
+_AoA_ is a critically important flight parameter, and full-authority flight control systems, such as those equipping **A330/A340 aircraft**, require accurate _AoA_ data to function properly. The aircraft was fitted with three **ADIRU**s to provide redundancy for fault tolerance, and the **FCPC**s used the three independent _AoA_ values to check their consistency. In the usual case, when all three _AoA_ values were valid and consistent, the average value of _AoA 1_ and _AoA 2_ was used by the **FCPC**s for their computations. If either AOA 1 or AOA 2 significantly deviated from the other two values, the FCPCs used a memorised value for 1.2 seconds. The FCPC algorithm was very effective, but it could not correctly manage a scenario where multiple spikes occurred in either AOA 1 or AOA 2 that were 1.2 seconds apart—that is, if the 1.2-second period of use of the memorised value happened to end while another spike was happening.
+
+---
+
+## Mitigation
