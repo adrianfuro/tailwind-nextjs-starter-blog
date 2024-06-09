@@ -154,12 +154,12 @@ Mitigating SEEs involves several strategies, primarily focused on design, materi
 
 #### 5. **Environmental Testing & Monitoring**
 
-    -**Testing Under Radiation:** Exposing components to controlled radiation sources pre-deployment helps identify weak points and adjust designs accordingly.
-    -**In-Field Monitoring:** Continuous monitoring for signs of SEE during normal operation helps adaptively manage risk through software adjustments or hardware recalibrations.
+- **Testing Under Radiation:** Exposing components to controlled radiation sources pre-deployment helps identify weak points and adjust designs accordingly.
+- **In-Field Monitoring:** Continuous monitoring for signs of SEE during normal operation helps adaptively manage risk through software adjustments or hardware recalibrations.
 
-#### 6. **_Materials Engineering_**
+#### 6. **Materials Engineering**
 
-    Choosing substrate materials with lower cross-sections for nuclear reactions within semiconductors also mitigates SEE risks.
+- Choosing substrate materials with lower cross-sections for nuclear reactions within semiconductors also mitigates SEE risks.
 
 ---
 
