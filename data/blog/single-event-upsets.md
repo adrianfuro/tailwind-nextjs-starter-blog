@@ -38,17 +38,29 @@ There are multiple types of **Single-event effects** that can occur, some of the
 
 ---
 
-## How does it happen?
-
----
-
 ## Incidents
 
 There are recorded incidents where **SEE's** affected the normal functioning of Microchips that led to weird and unexpected glitches of software. One of the incidents was actually very close to a disaster due to these types of cosmic influences.
 
+---
+
 ### 2003 Schaerbeek Elections
 
-In the _2003 elections_ in Brussels's municipality **Schaerbeek** (Belgium), an anomalous recorded number of votes triggered an investigation that concluded an SEU was responsible for giving a candidate named Maria Vindevoghel **_4,096 extra votes_**. The possibility of a **single-event upset** is suggested by the difference in votes being equivalent to a power of two, $2^{12}$
+![](/static/images/single-event-effects/e-voting-machine.jpg)
+
+<div class="source-text">
+    <a href="https://www.flickr.com/photos/european_parliament/3604121362" target="_blank">Image Source</a>
+</div>
+
+In the _2003 elections_ in Brussels's municipality **Schaerbeek** (Belgium), an anomalous recorded number of votes triggered an investigation that concluded an SEU was responsible for giving a candidate named **Maria Vindevoghel** **_4,096 extra votes_**. The possibility of a **single-event upset** is suggested by the difference in votes being equivalent to a power of two, $2^{12}$
+
+**_How did the SEU happen?_**
+
+![](/static/images/single-event-effects/bitflip.jpg)
+
+As shown in the previous image, while e-voting was taking place in Belgium, Schaerbeek, a _cosmic particle_ striked a **transistor** which provoked a **bit-flip** and changed it's binary state from **$0$** to **$1$**. This type of **Single-event effect** is not destructive, therefore can be reversed.
+
+---
 
 ### Qantas Flight 72
 
@@ -95,12 +107,66 @@ It is fortunate that nobody perished on this incident. Due to the events that un
 
 **_What caused the incident?_**
 
-The analysis of the Aircraft's computers showed that there was a case of **_Flight Control Primary Computer (FCPC)_** **faulty design**. But it does not explain what triggered the actual extrene value change in **AoA**. Given this, the incident was most probably triggered by an **SEE**, specifically a **Single-event upset**.
+The analysis of the Aircraft's computers showed that there was a case of **_Flight Control Primary Computer (FCPC)_** **faulty design**. But it does not explain what triggered the actual extreme value change in **AoA**. Given this, the incident was most probably triggered by an **SEE**, specifically a **Single-event upset**.
 
 Given the nature of the incident, a _cosmic ray_ that broke down into <b style={{ color: `red` }}>neutrons</b>, <b style={{ color: `red` }}>muons</b>, <b style={{ color: `red` }}>pions</b> and <b style={{ color: `red` }}>protons</b>, triggered a **bit shift** in one of the **ADIRU** systems, which led to the value of the _AoA_ being drastically changed.
 
 _AoA_ is a critically important flight parameter, and full-authority flight control systems, such as those equipping **A330/A340 aircraft**, require accurate _AoA_ data to function properly. The aircraft was fitted with three **ADIRU**s to provide redundancy for fault tolerance, and the **FCPC**s used the three independent _AoA_ values to check their consistency. In the usual case, when all three _AoA_ values were valid and consistent, the average value of _AoA 1_ and _AoA 2_ was used by the **FCPC**s for their computations. If either AOA 1 or AOA 2 significantly deviated from the other two values, the FCPCs used a memorised value for 1.2 seconds. The FCPC algorithm was very effective, but it could not correctly manage a scenario where multiple spikes occurred in either AOA 1 or AOA 2 that were 1.2 seconds apart—that is, if the 1.2-second period of use of the memorised value happened to end while another spike was happening.
 
+**_What is Angle of Attack (AoA)_**
+
+![a](/static/images/single-event-effects/AoA.jpg)
+
+<div class="source-text">
+    <a href="https://simpleflying.com/angle-of-attack-complete-guide/" target="_blank">Image Source</a>
+</div>
+
+The aircraft **angle of attack (AOA)** is defined as the angle of the oncoming wind **relative** to the _aircraft's reference line_. In other words, the angle that the oncoming air makes with the center of the fuselage or a designed average point on the wing is referred to as the aircraft AOA.
+
+The angle of attack must not be confused with the aircraft's **pitching angle**, which relates to the aircraft's _angle with the horizon_. The altitude indicator or the artificial horizon display in the cockpit indicates aircraft's pitching angle. The aircraft AOA can sometimes be mistaken for the flight path angle, which is the angle of the flight path vector relative to the horizon.
+
 ---
 
 ## Mitigation
+
+Mitigating SEEs involves several strategies, primarily focused on design, material choice, and shielding:
+
+#### 1. **Technology Choice**
+
+- **RHBD (Radiation-Hardened By Design) Chips**: Opt for semiconductor devices specifically designed to withstand radiation effects.
+- **Process Selection**: SOI (Silicon On Insulator) and bulk CMOS technologies differ in their resilience to radiation; choosing the suitable technology based on the expected radiation environment is crucial.
+
+#### 2. **Circuit Design Techniques**
+
+- **Redundancy**: Use redundant circuits or systems (e.g., Triple Modular Redundancy) where multiple units perform the same function and a majority voting system determines the correct output.
+- **Error Detection and Correction**: Implement error-correcting codes such as ECC memory, which can detect and fix errors that occur due to SEEs.
+- **Latch-Up Protection**: Design circuits with current-limiting capabilities and watchdog timers to reset the system in case of latch-up conditions.
+
+#### 3. **Shielding**
+
+- **Physical Shielding**: Encasing sensitive components or whole devices in materials that absorb or deflect high-energy particles can reduce SEE occurrence. Common materials include lead or specialized plastics like polyethylene.
+- **Magnetic Shielding**: For charged particles, magnetic fields can be used to deflect them away from sensitive areas.
+
+#### 4. **System-Level Strategies**
+
+- **Software Mitigation Techniques**: Software routines can check for anomalies indicating an SEE has occurred and initiate corrective actions such as resets or switching to backup systems.
+- "**Graceful Degradation**": Instead of complete system failure when an SEE occurs, systems can be designed to continue operating at a reduced capability level.
+
+#### 5. **Environmental Testing & Monitoring**
+
+    -**Testing Under Radiation:** Exposing components to controlled radiation sources pre-deployment helps identify weak points and adjust designs accordingly.
+    -**In-Field Monitoring:** Continuous monitoring for signs of SEE during normal operation helps adaptively manage risk through software adjustments or hardware recalibrations.
+
+#### 6. **_Materials Engineering_**
+
+    Choosing substrate materials with lower cross-sections for nuclear reactions within semiconductors also mitigates SEE risks.
+
+---
+
+## Conclusion
+
+The phenomena of cosmic rays and solar flares represent a significant, albeit often overlooked, risk to our digital infrastructure. From the mysterious malfunctions of satellites to unexpected errors in microchips, the influence of these cosmic events on technology is profound and pervasive. The incidents at Schaerbeek during the 2003 elections and the dangerous malfunctions aboard Qantas Flight 72 illustrate just how disruptive single-event effects can be, not only to devices but also to human lives.
+
+As we advance technologically, especially in fields like aerospace and other high-risk environments, understanding and mitigating Single-Event Effects becomes crucial. Modern mitigation strategies must incorporate robust design practices, from radiation-hardened components to sophisticated error-checking software systems that ensure reliability and safety under cosmic influence.
+
+By integrating comprehensive protective measures across design, technology selection, system architecture, and operational protocols, we can safeguard our technology-dependent society against the unpredictable yet inevitable touch of cosmic events. This proactive approach will not only enhance system resilience but also secure critical functions that modern civilization relies upon. Whether it's navigating an aircraft or casting a vote in an election — ensuring these systems are impervious to cosmic disruptions is essential for both progress and protection in our increasingly tech-driven world.
